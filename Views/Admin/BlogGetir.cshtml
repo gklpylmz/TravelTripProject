@@ -1,0 +1,31 @@
+﻿@model TravelTripProject.Models.Siniflar.Blog
+@{
+    ViewBag.Title = "BlogGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+@using (Html.BeginForm("BlogGuncelle", "Admin", FormMethod.Post))
+{
+
+    <form method="post" class="form-group">
+        @Html.LabelFor(x => x.blogID)
+        @Html.TextBoxFor(x => x.blogID, new { @class = "form-control" ,@readonly="readonly"})
+        <br />
+        @Html.LabelFor(x => x.blogBaslik)
+        @Html.TextBoxFor(x => x.blogBaslik, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.blogTarih)
+        @Html.TextBoxFor(x => x.blogTarih, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.blogImage)
+        @Html.TextBoxFor(x => x.blogImage, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.blogAciklama)
+        @Html.TextAreaFor(x => x.blogAciklama,12,1, new { @class = "form-control" })
+        <br />
+
+        <button class="btn btn-primary">Güncelle</button>
+    </form>
+}
+
